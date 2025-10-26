@@ -1,13 +1,20 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const env = require('dotenv');
-const Movie=require('./models/movie.models')
+
+
+const MovieRoutes=require('./routes/movie.route')
 
 env.config(); // 
 
+
 const app = express();
+app.use(express.json())
 const PORT = process.env.PORT 
 const DB_URL = process.env.DB_URL;
+
+ MovieRoutes(app)
+
 
 app.get('/home', (req, res) => {
   console.log("hitting home");
