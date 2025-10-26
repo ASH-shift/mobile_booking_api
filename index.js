@@ -1,6 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const env = require('dotenv');
+const Movie=require('./models/movie.models')
 
 env.config(); // 
 
@@ -21,6 +22,17 @@ mongoose.connect(DB_URL)
     console.log(" Mongoose connected");
     app.listen(PORT, () => {
       console.log(` Server running on port ${PORT}`);
+
+      //  Movie.create({
+      //   name:"demon slayer",
+      //   casts:["tanjiro","giyu","akaza"],
+      //   description:"a anime action movie",
+      //   language:["hindi","japanese"],
+      //   releasestats:"RELESED",
+
+      //  })
+
+
     });
   })
   .catch((err) => {
