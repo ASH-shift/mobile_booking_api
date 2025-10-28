@@ -29,6 +29,35 @@ try{
    
 
 }
+
+
+const deleteMovie=async(req,res)=>{
+try {
+    const response=await Movie.deleteOne({
+        id:req.params.MovieId
+
+    })
+    return res.status(200).json({
+        success:true,
+        err:{},
+        message:"succesfully deleted the movie",
+        data:response,
+    })
+    
+} catch (err) {
+    console.log(err)
+    return res.response(500).json({
+           success:false,
+        err:err,
+        message:"something went wrong",
+        data:{},
+    })
+    
+}
+
+
+}
  module.exports={
-        createMovie
+        createMovie,
+        deleteMovie
     }

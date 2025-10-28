@@ -1,6 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const env = require('dotenv');
+const bodyParser=require('body-parser');
 
 
 const MovieRoutes=require('./routes/movie.route')
